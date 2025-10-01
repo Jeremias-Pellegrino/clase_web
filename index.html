@@ -10,21 +10,29 @@
 
 <body>
 
-  <!-- <h1> Jere vlad luki y ren </h1>
-  <h1> esto es otro tag </h1>
-  <h2> esto es un tag header 2 </h2>
-  
-  <div id="myDiv">
-    <h1> esto es otro tag h1esto es otro tag h1esto es otro tag h1esto es otro tag h1esto es otro tag h1 </h1>
-    <h2> esto es un tag header 2 h2 </h2>
-  </div> -->
+  <script>
+    console.log("Hola vieja!");
+
+    function alIngresar() {
+      let usuario = document.querySelector('#usuario').value 
+      let pass = document.querySelector('#password').value 
+      let btn = document.querySelector('button')
+
+      if (usuario === 'Lalala') {
+        alert('Bienvenido :D')
+        btn.style.backgroundColor = '#846103'
+      }else{
+        alert('USUARIO INCORRECTO')
+      }
+    }
+  </script>
 
   <div id="login">
     <img src="https://images-ext-1.discordapp.net/external/0d_dDzQgAQ9xxp9rNMNRaHgQuuDda8eA8uMFHg9pgZE/https/aulasencomunion.net/pluginfile.php/1/core_admin/logo/0x200/1738574461/logo_header.png"/>
-    <input type="text" placeholder="Usuario">
-    <input type="password" placeholder="Contraseña">
+    <input id="usuario" type="text" placeholder="Usuario">
+    <input id="password" type="password" placeholder="Contraseña">
     <a href="#">¿Olvidaste tu contraseña?</a>
-    <button onclick="alert('USUARIO INCORRECTO')">Ingresar</button>
+    <button onclick="alIngresar()">Ingresar</button>
   </div>
 
 

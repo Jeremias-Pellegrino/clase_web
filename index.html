@@ -12,22 +12,49 @@
 
   <script>
     console.log("Hola vieja!");
-
+    
     function alIngresar() {
       let usuario = document.querySelector('#usuario').value 
       let pass = document.querySelector('#password').value 
       let btn = document.querySelector('button')
+      
+      btn.style.transform = 'scale(0.75)'
+      
+      let base_datos = {
+        lalala: "123",
+        ñañaña: "456",
+        papapa: "789"
 
-      if (usuario === 'Lalala') {
-        alert('Bienvenido :D')
-        btn.style.backgroundColor = '#846103'
-      }else{
-        alert('USUARIO INCORRECTO')
       }
-    }
-  </script>
 
-  <div id="login">
+      // if (usuario === 'Lalala') {
+      //   alert('Bienvenido :D')
+      //   btn.style.backgroundColor = '#846103'     
+      // }
+      if (pass === base_datos[usuario]){
+        alert('SI')
+      }
+      if (usuario === "") {
+        alert('Y tu usuario?')
+        btn.style.backgroundColor = '#365931'
+      }
+      if (pass === "" || pass !== "123")  {
+        console.log('Contraseña inválida')
+        alert('Contraseña inválida')
+        console.error('Contraseña inválida')
+        btn.style.backgroundColor = '#235632'
+      }else{
+        alert('Aprobado')
+      }
+      
+      setTimeout(function(){
+        btn.style.transform = 'scale(1)'
+      }, 500)
+      
+    }
+    </script>
+
+<div id="login">
     <img src="https://images-ext-1.discordapp.net/external/0d_dDzQgAQ9xxp9rNMNRaHgQuuDda8eA8uMFHg9pgZE/https/aulasencomunion.net/pluginfile.php/1/core_admin/logo/0x200/1738574461/logo_header.png"/>
     <input id="usuario" type="text" placeholder="Usuario">
     <input id="password" type="password" placeholder="Contraseña">
